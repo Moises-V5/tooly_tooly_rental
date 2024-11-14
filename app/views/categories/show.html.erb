@@ -12,6 +12,7 @@
           <p class="text-dark">Owner: <%= link_to tool.user.first_name, profile_path(tool.user) %></p>
           <% if current_user == tool.user %>
             <%= link_to "Delete", tool_path(tool), data: { turbo_method: :delete }, class: "btn btn-outline-danger btn-sm my-1 text-dark" %>
+            <%= link_to "Update Tool", edit_tool_path(tool), class: "text-center btn btn-outline-info" %>
           <% end %>
         </div>
       </div>

@@ -1,0 +1,14 @@
+<div class="container">
+   <% if @tool.present? %>
+    <%= simple_form_for @tool, url: tool_path(@tool), method: :patch do |f| %>
+      <%= f.input :name, placeholder: "Name" %>
+      <%= f.input :description, placeholder: "Add a description of the tool" %>
+      <%= f.input :price, placeholder: "€" %>
+      <%= f.input :address, placeholder: "Full address" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  <% else %>
+    <p>Tool not found or invalid.</p>
+  <% end %>
+</div>
