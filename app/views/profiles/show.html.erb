@@ -22,3 +22,28 @@
         <%= link_to "My bookings", bookings_path, class: "text-center btn btn-secondary rounded-3" %>
     </div>
 </div>
+
+<% if @user.tools.any? %>
+  <hr class="text-center my-3 w-50 mx-auto">
+  <h4 class="text-center my-4">My tools</h4>
+
+  <div class="tools-user mx-auto">
+    <% @user.tools.each do |tool| %>
+
+      <ul class="tool-list">
+        <li class="tool-item list-unstyled p-3">
+          <%= link_to tool_path(tool), class: "tool-link" do %>
+            <div class="tool-content">
+              <p class="tool-name text-light mb-2"><%= tool.name %></p>
+              <% if tool.photos.attached? %>
+                <%= image_tag tool.photos.first, crop: :fill, class: "tool-image" %>
+              <% end %>
+            </div>
+          <% end %>
+        </li>
+      </ul>
+
+    <% end %>
+  </div>
+
+<% end %>

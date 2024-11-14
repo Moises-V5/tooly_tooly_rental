@@ -1,12 +1,13 @@
-<div class="form-card">
-<%= simple_form_for @tool do |f| %>
-  <%= f.input :name, placeholder: "Full name"%>
-  <%= f.input :description, placeholder: "Add a description of the tool"%>
-  <%= f.input :price, placeholder: "€"%>
-  <%= f.input :address, placeholder: "Full address"%>
-  <%= f.association :category, collection: Category.all%>
-  <%= f.input :photos, as: :file, input_html: { multiple: true }%>
 
-  <%= f.submit "New tool", class: "btn btn-primary" %>
-<% end %>
-</div>
+  <div class="container p-3 border rounded-3 my-3">
+    <%= simple_form_for @tool do |f| %>
+      <%= f.input :name, placeholder: "Full name"%>
+      <%= f.input :description, placeholder: "Add a description of the tool"%>
+      <%= f.input :price, placeholder: "€"%>
+      <%= f.input :address, placeholder: "Full address"%>
+      <%= f.association :category, collection: Category.all%>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+
+      <%= f.submit "New tool", class: "btn btn-primary" %>
+    <% end %>
+  </div>

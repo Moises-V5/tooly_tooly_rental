@@ -1,0 +1,42 @@
+.tools-user {
+  width: 80%;
+}
+
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tool-item {
+  background-color: #343a40;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tool-item:hover {
+  transform: scale(1.02);
+}
+
+.tool-link {
+  text-decoration: none;
+}
+
+.tool-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tool-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.tool-image {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}
